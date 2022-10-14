@@ -1,0 +1,37 @@
+package inducesmile.com.opencvexample;
+
+import org.opencv.core.Mat;
+
+import java.util.ArrayList;
+
+
+public class PlateRecognition
+{
+
+    static ArrayList<String> PlateCaracters ;
+
+    public PlateRecognition()
+    {
+
+    }
+
+    public static ArrayList<String> Recognition(ArrayList<Mat> Plates)
+    {
+        ArrayList<String> output=new ArrayList<>();
+
+        for (int i = 0; i < Plates.size(); i++) {
+            String plate=Ocr.Ocr(Plates.get(i));
+            if(plate.length()>=9)
+            {
+                output.add(plate);
+            }
+        }
+        return output;
+    }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+}
